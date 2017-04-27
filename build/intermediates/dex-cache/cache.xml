@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Volumes/PJ-Sophanna/Works/Hackathon/SmartPredictKeyboard/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bebb61cd3f7afc95d9a7c1408354552ec86a0b3f">
+        <dex dex="/Volumes/PJ-Sophanna/Works/Hackathon/SmartPredictKeyboard/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a735d3d1869dea4fcf13fb49e4c9e4a8b2ec21e1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/PJ-Sophanna/Works/Hackathon/SmartPredictKeyboard/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Volumes/PJ-Sophanna/Works/Hackathon/SmartPredictKeyboard/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8aaa3bf89aea3b72ad366382b612e8a6704e87ec/classes.dex" />
+    </item>
+
+</items>
