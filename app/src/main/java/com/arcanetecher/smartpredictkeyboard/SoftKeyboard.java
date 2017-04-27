@@ -203,31 +203,31 @@ public class SoftKeyboard extends InputMethodService
                 
                 // We now look for a few special variations of text that will
                 // modify our behavior.
-                int variation = attribute.inputType & InputType.TYPE_MASK_VARIATION;
-                if (variation == InputType.TYPE_TEXT_VARIATION_PASSWORD ||
-                        variation == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
-                    // Do not display predictions / what the user is typing
-                    // when they are entering a password.
-                    mPredictionOn = false;
-                }
+//                int variation = attribute.inputType & InputType.TYPE_MASK_VARIATION;
+//                if (variation == InputType.TYPE_TEXT_VARIATION_PASSWORD ||
+//                        variation == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+//                    // Do not display predictions / what the user is typing
+//                    // when they are entering a password.
+//                    mPredictionOn = false;
+//                }
                 
-                if (variation == InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-                        || variation == InputType.TYPE_TEXT_VARIATION_URI
-                        || variation == InputType.TYPE_TEXT_VARIATION_FILTER) {
-                    // Our predictions are not useful for e-mail addresses
-                    // or URIs.
-                    mPredictionOn = false;
-                }
+//                if (variation == InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+//                        || variation == InputType.TYPE_TEXT_VARIATION_URI
+//                        || variation == InputType.TYPE_TEXT_VARIATION_FILTER) {
+//                    // Our predictions are not useful for e-mail addresses
+//                    // or URIs.
+//                    mPredictionOn = false;
+//                }
                 
-                if ((attribute.inputType & InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE) != 0) {
-                    // If this is an auto-complete text view, then our predictions
-                    // will not be shown and instead we will allow the editor
-                    // to supply their own.  We only show the editor's
-                    // candidates when in fullscreen mode, otherwise relying
-                    // own it displaying its own UI.
-                    mPredictionOn = false;
-                    mCompletionOn = isFullscreenMode();
-                }
+//                if ((attribute.inputType & InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE) != 0) {
+//                    // If this is an auto-complete text view, then our predictions
+//                    // will not be shown and instead we will allow the editor
+//                    // to supply their own.  We only show the editor's
+//                    // candidates when in fullscreen mode, otherwise relying
+//                    // own it displaying its own UI.
+//                    mPredictionOn = false;
+//                    mCompletionOn = isFullscreenMode();
+//                }
                 
                 // We also want to look at the current state of the editor
                 // to decide whether our alphabetic keyboard should start out
@@ -293,8 +293,8 @@ public class SoftKeyboard extends InputMethodService
         super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd,
                 candidatesStart, candidatesEnd);
         
-        // If the current selection in the text view changes, we should
-        // clear whatever candidate text we have.
+//         If the current selection in the text view changes, we should
+//         clear whatever candidate text we have.
         if (mComposing.length() > 0 && (newSelStart != candidatesEnd
                 || newSelEnd != candidatesEnd)) {
             mComposing.setLength(0);
@@ -400,6 +400,7 @@ public class SoftKeyboard extends InputMethodService
             case KeyEvent.KEYCODE_ENTER:
                 // Let the underlying text editor always handle these.
                 return false;
+
             default:
                 // For all other keys, if we want to do transformations on
                 // text being entered with a hard keyboard, we need to process
@@ -463,6 +464,7 @@ public class SoftKeyboard extends InputMethodService
             inputConnection.commitText(mComposing, mComposing.length());
             mComposing.setLength(0);
             updateCandidates();
+
         }
     }
 
@@ -508,6 +510,11 @@ public class SoftKeyboard extends InputMethodService
      */
     private void sendKey(int keyCode) {
         switch (keyCode) {
+            case 32:
+                // Space button to the display handler is now transferred
+                // to OnKey method, case primary code 32
+                break;
+            
             case '\n':
                 keyDownUp(KeyEvent.KEYCODE_ENTER);
                 break;
@@ -525,6 +532,23 @@ public class SoftKeyboard extends InputMethodService
 
     public void onKey(int primaryCode, int[] keyCodes) {
         Log.d("Test","KEYCODE: " + primaryCode);
+
+        /* Space button to select the first word of the suggestions
+         * and to select only if there are available suggestions, otherwise the app will crush
+         * else return normal space output display to the input connection
+         */
+        if (primaryCode == 32) {
+            if (mSuggestions != null) {
+                if (!mSuggestions.isEmpty()) {
+                    pickSuggestionManually(0);
+                }
+            } else {
+                getCurrentInputConnection().commitText(" ", 1);
+            }
+
+        }
+
+
         if (isWordSeparator(primaryCode)) {
             // Handle separator
             if (mComposing.length() > 0) {
@@ -577,12 +601,16 @@ public class SoftKeyboard extends InputMethodService
      */
     private void updateCandidates() {
         if (!mCompletionOn) {
+            ArrayList<String> list = new ArrayList<String>();
             if (mComposing.length() > 0) {
-                ArrayList<String> list = new ArrayList<String>();
-                //list.add(mComposing.toString());
+
+//                list.add(mComposing.toString());
+//                setSuggestions(list, true, true);
+
                 Log.d("SoftKeyboard", "REQUESTING: " + mComposing.toString());
                 mScs.getSentenceSuggestions(new TextInfo[] {new TextInfo(mComposing.toString())}, 5);
-                setSuggestions(list, true, true);
+
+                Log.d("LIST:", list.toString());
             } else {
                 setSuggestions(null, false, false);
             }
@@ -600,6 +628,7 @@ public class SoftKeyboard extends InputMethodService
         if (mCandidateView != null) {
             mCandidateView.setSuggestions(suggestions, completions, typedWordValid);
         }
+
     }
     
     private void handleBackspace() {

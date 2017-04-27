@@ -2,6 +2,7 @@ package com.arcanetecher.smartpredictkeyboard;
 
 import android.service.textservice.SpellCheckerService;
 import android.util.Log;
+import android.view.inputmethod.InputConnection;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SuggestionsInfo;
 import android.view.textservice.TextInfo;
@@ -28,7 +29,10 @@ public class MySpellingSession extends SpellCheckerService.Session {
         * */
         switch (word) {
             case "Nhom":
-                suggestions = new String[]{"ខ្ញុំ", "ញុំ", "កាកា", "ផេតត្រូ", "ដាដា", "ផូផូ", "កុកកុក"};
+                suggestions = new String[]{"ខ្ញុំ", "ញុំ"};
+                break;
+            case "jong":
+                suggestions = new String[]{"ចង", "ជង់"};
                 break;
             default:
                 suggestions = new String[]{};
@@ -45,6 +49,7 @@ public class MySpellingSession extends SpellCheckerService.Session {
                 SuggestionsInfo(SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO, suggestions);
 
         Log.d("WORD:", word);
+
         Log.d("SUGGESTION:", suggestions.toString());
         Log.d("SUGGESTION-INFO:", suggestionsInfo.toString());
         return suggestionsInfo;
