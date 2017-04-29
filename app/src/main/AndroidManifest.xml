@@ -2,24 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arcanetecher.smartpredictkeyboard">
 
-    <application
-        android:label="@string/ime_name">
-        <activity android:name="com.arcanetecher.smartpredictkeyboard.ImePreferences" android:label="@string/settings_name">
+    <application android:label="@string/ime_name">
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".SoftKeyboard"
+        <activity
+            android:name=".ImePreferences"
+            android:label="@string/settings_name">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".SoftKeyboard"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
             </intent-filter>
-            <meta-data android:name="android.view.im" android:resource="@xml/method" />
-        </service>
 
-        <service android:name=".SpellingService"
-            android:permission="android.permission.BIND_TEXT_SERVICE"
-            >
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+        <service
+            android:name=".SpellingService"
+            android:permission="android.permission.BIND_TEXT_SERVICE">
             <intent-filter>
                 <action android:name="android.service.textservice.SpellCheckerService" />
             </intent-filter>
@@ -28,6 +40,7 @@
                 android:name="android.view.textservice.scs"
                 android:resource="@xml/spellinginfo" />
         </service>
+
 
     </application>
 
