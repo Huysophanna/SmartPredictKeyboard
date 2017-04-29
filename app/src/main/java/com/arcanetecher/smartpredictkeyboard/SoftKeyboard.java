@@ -514,7 +514,7 @@ public class SoftKeyboard extends InputMethodService
                 // Space button to the display handler is now transferred
                 // to OnKey method, case primary code 32
                 break;
-            
+
             case '\n':
                 keyDownUp(KeyEvent.KEYCODE_ENTER);
                 break;
