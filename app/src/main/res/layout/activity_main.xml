@@ -8,6 +8,88 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#0D9D58"
     tools:context="com.arcanetecher.smartpredictkeyboard.MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ខ្មែរយើង"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="#f5f5f5"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:id="@+id/titleSmart"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="keyboard"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="#f5f5f5"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/titleKeyboard" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        android:text="enable ខ្មែរយើង keyboard"
+        android:textSize="20dp"
+        android:textStyle="normal"
+        android:textColor="#f5f5f5"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:id="@+id/enableBtn"
+        android:theme="@style/Widget.AppCompat.Button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:background="@drawable/button"
+        android:text="switch​ to​ ខ្មែរយើង keyboard​"
+        android:textSize="17dp"
+        android:textAllCaps="true"
+        android:textStyle="normal"
+        android:textColor="#f5f5f5"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:id="@+id/switchBtn"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/enableBtn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        android:text="Dashboard >"
+        android:background="@drawable/transparent"
+        android:textColor="#f5f5f5"
+        android:textSize="15dp"
+        android:id="@+id/dashboardbtn"/>
 </RelativeLayout>

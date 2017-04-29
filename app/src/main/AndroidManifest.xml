@@ -2,10 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arcanetecher.smartpredictkeyboard">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application android:label="@string/ime_name">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -14,6 +23,7 @@
             android:label="@string/settings_name">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -41,7 +51,47 @@
                 android:resource="@xml/spellinginfo" />
         </service>
 
+        <activity
+            android:name=".Dashboard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Customword"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_customword"
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Preview"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_preview"
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Feedback"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_feedback"
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Menu"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
