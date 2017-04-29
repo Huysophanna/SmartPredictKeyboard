@@ -1,6 +1,8 @@
 package com.arcanetecher.smartpredictkeyboard;
 
 import android.renderscript.ScriptGroup;
+import android.content.Context;
+import android.content.res.Resources;
 import android.service.textservice.SpellCheckerService;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SuggestionsInfo;
 import android.view.textservice.TextInfo;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -150,6 +153,7 @@ public class MySpellingSession extends SpellCheckerService.Session {
 //        Log.d("SUGGESTION-INFO:", suggestionsInfo.toString());
         return suggestionsInfo;
     }
+
 
     @Override
     public SentenceSuggestionsInfo[] onGetSentenceSuggestionsMultiple(TextInfo[] textInfos, int suggestionsLimit) {
