@@ -84,8 +84,9 @@ public class MySpellingSession extends SpellCheckerService.Session {
 
         //SPECIAL VOWEL & NUMBER PART INITIALIZATION
         dictionary.put("'" + SPECIALVOWEL, new String[]{"់", "៉"});
+        dictionary.put("bontok" + SPECIALVOWEL, new String[]{"់", "៉"});
         dictionary.put("\"" + SPECIALVOWEL, new String[]{"់", "៉"});
-        dictionary.put("/" + SPECIALVOWEL, new String[]{"៊"});
+        dictionary.put("treysab" + SPECIALVOWEL, new String[]{"៊"});
         dictionary.put("ao" + SPECIALVOWEL, new String[]{"ឪ", "ឧ"});
         dictionary.put("]" + SPECIALVOWEL, new String[]{"ឪ", "ឧ"});
         dictionary.put("1" + NUMBER, new String[]{"១", "មួយ"});
@@ -97,19 +98,69 @@ public class MySpellingSession extends SpellCheckerService.Session {
         dictionary.put("7" + NUMBER, new String[]{"៧", "ប្រាំពីរ", "័"});
         dictionary.put("8" + NUMBER, new String[]{"៨", "ប្រាំបី", "៏"});
         dictionary.put("9" + NUMBER, new String[]{"៩", "ប្រាំបួន"});
-        dictionary.put("-" + NUMBER, new String[]{"ឥ", "៌"});
-        dictionary.put("=" + SPECIALVOWEL, new String[]{"ឲ", "៎"});
+        dictionary.put("ey" + NUMBER, new String[]{"អី", "ឥ", "៌"});
+        dictionary.put("oy" + SPECIALVOWEL, new String[]{"ឲ្យ", "អោយ", "៎"});
         dictionary.put("\\" + SPECIALVOWEL, new String[]{"ឭ", "ឮ"});
 
         //SPECIAL FAMILAIR COMBINATION
         dictionary.put("nh" + CONSONANT, new String[]{"ញ", "្ញ", "ខ្ញុំ", "ញុំ"});
-        dictionary.put("nh" + CONSONANT, new String[]{"ញ", "្ញ", "ខ្ញុំ", "ញុំ"});
         dictionary.put("th" + CONSONANT, new String[]{"ថ", "ធ", "ឋ", "ឍ", "្ថ", "្ធ", "្ឋ", "្ឍ"});
-
+        dictionary.put("chh" + CONSONANT, new String[]{"ឆ", "ឈ", "្ឆ", "្ឈ"});
+        dictionary.put("ch" + CONSONANT, new String[]{"ឆ", "ឈ", "ច", "ជ", "្ឆ", "្ឈ", "្ច", "្ជ"});
+        dictionary.put("ph" + CONSONANT, new String[]{"ផ", "ភ", "្ផ", "្ភ"});
+        dictionary.put("khor" + CONSONANT, new String[]{"ខ", "ឃ", "្ខ", "្ឃ"});
+        dictionary.put("tng" + CONSONANT, new String[]{"ថ្ង", "ធ្ង", "ថ្ងៃ", "ធ្ងន់"});
 
         //WORD DEFINED PART INITIALIZATION
-        dictionary.put("nhom" + CONSONANT, new String[]{"ខ្ញុំ", "ញុំ"});
+        dictionary.put("bay" + CONSONANT, new String[]{"បាយ"});
+        dictionary.put("bat" + CONSONANT, new String[]{"បាត់", "បាត", "បាទ"});
+        dictionary.put("bart" + CONSONANT, new String[]{"បាទ", "បាត"});
+        dictionary.put("da" + CONSONANT, new String[]{"ដា", "ដារ"});
+        dictionary.put("del" + CONSONANT, new String[]{"ដែល", "ដែរ", "ឌែល"});
+        dictionary.put("dae" + CONSONANT, new String[]{"ដែល", "ដែរ", "ឌែល"});
+        dictionary.put("dor" + CONSONANT, new String[]{"ដ៏", "ដ", "ដរ"});
         dictionary.put("jong" + CONSONANT, new String[]{"ចង់", "ចង", "ជង់"});
+        dictionary.put("ja" + CONSONANT, new String[]{"ចា៎", "ចារ", "ចាស់"});
+        dictionary.put("jas" + CONSONANT, new String[]{"ចាស់", "ចា៎", "ចារ"});
+        dictionary.put("ka" + CONSONANT, new String[]{"ការ", "កា", "ការណ៍"});
+        dictionary.put("kernh" + CONSONANT, new String[]{"ឃេីញ"});
+        dictionary.put("knhom" + CONSONANT, new String[]{"ខ្ញុំ", "ញុំ"});
+        dictionary.put("la" + CONSONANT, new String[]{"ឡា", "លា"});
+        dictionary.put("min" + CONSONANT, new String[]{"មិន", "មីន"});
+        dictionary.put("men" + CONSONANT, new String[]{"មិន", "មីន"});
+        dictionary.put("nhom" + CONSONANT, new String[]{"ខ្ញុំ", "ញុំ"});
+        dictionary.put("nov" + CONSONANT, new String[]{"នៅ", "នូវ"});
+        dictionary.put("na" + CONSONANT, new String[]{"ណា", "ណា៎"});
+        dictionary.put("nas" + CONSONANT, new String[]{"ណាស់"});
+        dictionary.put("or" + CONSONANT, new String[]{"អ", "អរ"});
+        dictionary.put("pong" + CONSONANT, new String[]{"ផង", "ផង់", "ភង់"});
+        dictionary.put("ptes" + CONSONANT, new String[]{"ផ្ទះ"});
+        dictionary.put("riel" + CONSONANT, new String[]{"៛", "រៀល"});
+        dictionary.put("rean" + CONSONANT, new String[]{"រៀន"});
+        dictionary.put("ra" + CONSONANT, new String[]{"រា", "រ៉ា"});
+        dictionary.put("sa" + CONSONANT, new String[]{"សា", "សារ"});
+        dictionary.put("sala" + CONSONANT, new String[]{"សាលា", "សាលារៀន"});
+        dictionary.put("seksa" + CONSONANT, new String[]{"សិក្សា"});
+        dictionary.put("sabay" + CONSONANT, new String[]{"សប្បាយ"});
+        dictionary.put("saart" + CONSONANT, new String[]{"ស្អាត", "ស្អាតបាត"});
+        dictionary.put("sos" + CONSONANT, new String[]{"សោះ", "សស់"});
+        dictionary.put("sros" + CONSONANT, new String[]{"ស្រស់", "ស្រស់ស្អាត"});
+        dictionary.put("tov" + CONSONANT, new String[]{"ទៅ"});
+        dictionary.put("tes" + CONSONANT, new String[]{"ទះ", "ផ្ទះ"});
+        dictionary.put("tam" + CONSONANT, new String[]{"តាម", "ថាម"});
+        dictionary.put("team" + CONSONANT, new String[]{"ទាម", "ទាមទារ"});
+        dictionary.put("tea" + CONSONANT, new String[]{"ទា", "ទារ", "តៀរ"});
+        dictionary.put("tngai" + CONSONANT, new String[]{"ថ្ងៃ"});
+        dictionary.put("yor" + CONSONANT, new String[]{"យក"});
+        dictionary.put("yok" + CONSONANT, new String[]{"យក"});
+
+
+
+
+
+
+
+
 
     }
 
