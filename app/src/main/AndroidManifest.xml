@@ -67,8 +67,7 @@
             android:name=".Menu"
             android:label="@string/title_activity_menu"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:hardwareAccelerated="false">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
