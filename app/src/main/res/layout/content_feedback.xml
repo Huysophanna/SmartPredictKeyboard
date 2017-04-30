@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.arcanetecher.smartpredictkeyboard.Feedback"
+    tools:showIn="@layout/activity_feedback">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fullscreen_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:keepScreenOn="true"
+                android:text="@string/feedback_greeting"
+                android:textColor="#333333"
+                android:textSize="17dp"
+                android:padding="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="describe your experience"
+                android:textAllCaps="true"
+                android:padding="10dp"
+                android:textStyle="italic"
+                android:textColor="#0d9d58"
+                android:textSize="17dp"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Very Good"
+                    android:textSize="15dp"
+                    android:textColor="#333333"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Good"
+                    android:textSize="15dp"
+                    android:textColor="#333333"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Neutral"
+                    android:textSize="15dp"
+                    android:textColor="#333333"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Poor"
+                    android:textSize="15dp"
+                    android:textColor="#333333"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Very Poor"
+                    android:textSize="15dp"
+                    android:textColor="#333333"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="additional comment"
+                android:textAllCaps="true"
+                android:padding="10dp"
+                android:textStyle="italic"
+                android:textColor="#0d9d58"
+                android:textSize="17dp"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="100sp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:background="#e5e5e5"
+                android:hint="Type your comment here ..."/>
+
+            <Button
+                android:id="@+id/submit"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0d9d58"
+                android:text="submit"
+                android:textColor="#f5f5f5"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

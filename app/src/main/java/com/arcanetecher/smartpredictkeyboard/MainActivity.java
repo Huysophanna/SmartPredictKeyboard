@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -46,8 +47,17 @@ public class MainActivity extends Activity {
         dashboardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Menu.class);
-                startActivity(intent);
+                String ime = Settings.Secure.getString(
+                        getContentResolver(),
+                        Settings.Secure.DEFAULT_INPUT_METHOD
+                );
+                if (ime.equals("com.arcanetecher.smartpredictkeyboard/.SoftKeyboard")) {
+                    Intent intent = new Intent(MainActivity.this, Menu.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this, "Please switch to ខ្មែរយើង keyboard",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

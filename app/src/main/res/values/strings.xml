@@ -38,15 +38,19 @@
     <string name="select_language">Select input languages</string>
     <string name="general_category">General</string>
     <string name="service_label">SmartPredictChecker</string>
-    <string name="title_activity_dashboard">ខ្មែរយើង KEYBOARD</string>
+    <string name="title_activity_dashboard">ខ្មែរយើង Keyboard</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <string name="title_activity_customword">ADD CUSTOM WORD</string>
+    <string name="title_activity_customword">Add custom word</string>
 
-    <string name="title_activity_preview">PREVIEW</string>
+    <string name="title_activity_preview">Preview</string>
 
-    <string name="title_activity_feedback">FEEDBACK</string>
+    <string name="title_activity_feedback">Feedback</string>
     <string name="feedback_greeting">Your feedback help us understand what we do well and how we can improve.</string>
-    <string name="title_activity_menu">ខ្មែរយើង KEYBOARD</string>
+    <string name="title_activity_menu">ខ្មែរយើង Keyboard</string>
+    <string name="title_activity_instruction">Instruction</string>
+    <string name="app_instruction">
+        ខ្មែរយើង Keyboard is an easy keyboard that provide realtime language translation service from latin into khmer along with word prediction.
+    </string>
 </resources>
