@@ -1,7 +1,10 @@
 package com.arcanetecher.smartpredictkeyboard;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.provider.UserDictionary;
 import android.service.textservice.SpellCheckerService;
 import android.util.Log;
 import android.view.inputmethod.InputConnection;
@@ -54,6 +57,8 @@ public class MySpellingSession extends SpellCheckerService.Session {
         SuggestionsInfo suggestionsInfo = new
                 SuggestionsInfo(SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO, suggestions);
 
+
+
         Log.d("WORD:", word);
 
         Log.d("SUGGESTION:", suggestions.toString());
@@ -77,6 +82,7 @@ public class MySpellingSession extends SpellCheckerService.Session {
                 suggestionsInfos.add(onGetSuggestions(tmp, suggestionsLimit));
             }
         }
+
         return new SentenceSuggestionsInfo[]{
                 new SentenceSuggestionsInfo(
                         suggestionsInfos.toArray(new SuggestionsInfo[suggestionsInfos.size()]),

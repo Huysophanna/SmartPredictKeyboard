@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arcanetecher.smartpredictkeyboard">
 
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
     <application android:label="@string/ime_name">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -40,7 +41,6 @@
                 android:name="android.view.textservice.scs"
                 android:resource="@xml/spellinginfo" />
         </service>
-
 
     </application>
 

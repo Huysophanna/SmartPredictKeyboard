@@ -39,6 +39,7 @@ import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
 import android.view.textservice.TextInfo;
 import android.view.textservice.TextServicesManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +90,8 @@ public class SoftKeyboard extends InputMethodService
     private SpellCheckerSession mScs;
     private List<String> mSuggestions;
 
-
+    private int pickedSuggestionIndex = 0;
+    List<String> suggestionResults = new ArrayList<>();
 
     /**
      * Main initialization of the input method component.  Be sure to call
@@ -745,7 +747,6 @@ public class SoftKeyboard extends InputMethodService
                 mComposing.replace(0, mComposing.length(), mSuggestions.get(index));
             }
             commitTyped(getCurrentInputConnection());
-
         }
     }
     
@@ -820,5 +821,8 @@ public class SoftKeyboard extends InputMethodService
         }
         Log.d("SoftKeyboard", "SUGGESTIONS: " + sb.toString());
         setSuggestions(sb, true, true);
+        suggestionResults = sb;
     }
 }
+
+
