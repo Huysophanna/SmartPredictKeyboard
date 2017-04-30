@@ -17,9 +17,11 @@
 */
 -->
 <resources>
-    <color name="colorPrimary">#0d9d58</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorPrimary">#0d9d58</color>-->
+    <color name="colorPrimary">#3052BF</color>
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorPrimaryDark">#2D50A2</color>
+    <color name="colorAccent">#212448</color>
     <color name="candidate_normal">#FF000000</color>
     <color name="candidate_recommended">#000000</color>
     <color name="candidate_other">#ff808080</color>
