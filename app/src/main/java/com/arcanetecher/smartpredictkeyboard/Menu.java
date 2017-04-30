@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Menu extends AppCompatActivity {
 
@@ -23,6 +24,33 @@ public class Menu extends AppCompatActivity {
         Button previewBtn = (Button)findViewById(R.id.previewbtn);
         Button feedbackBtn = (Button)findViewById(R.id.feedbackBtn);
         Button addCustom = (Button)findViewById(R.id.addCustom);
+        Button settingBtn = (Button)findViewById(R.id.settingBtn);
+        Button rateBtn = (Button)findViewById(R.id.rateBtn);
+        Button shareBtn = (Button)findViewById(R.id.shareBtn);
+
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Menu.this, "Coming Soon",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Menu.this, "Coming Soon",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Menu.this, "Coming Soon",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
         addCustom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +79,7 @@ public class Menu extends AppCompatActivity {
         instructionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Menu.this, Customword.class);
+                Intent intent = new Intent(Menu.this, Instruction.class);
                 startActivity(intent);
             }
         });

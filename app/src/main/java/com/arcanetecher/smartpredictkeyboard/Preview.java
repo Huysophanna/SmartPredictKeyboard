@@ -1,15 +1,11 @@
 package com.arcanetecher.smartpredictkeyboard;
 
-import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 
 public class Preview extends AppCompatActivity {
 
@@ -17,10 +13,17 @@ public class Preview extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
-
-        Toolbar toolbar = (Toolbar)findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.setTitleTextColor(Color.WHITE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }

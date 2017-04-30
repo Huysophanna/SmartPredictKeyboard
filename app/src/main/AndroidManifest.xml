@@ -10,8 +10,8 @@
     <application android:label="@string/ime_name">
         <activity
             android:name=".MainActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,8 +55,8 @@
             android:name=".Dashboard"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/FullscreenTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -64,34 +64,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Customword"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_customword"
-            android:theme="@style/FullscreenTheme"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".Preview"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_preview"
-            android:theme="@style/FullscreenTheme"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".Feedback"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_feedback"
-            android:theme="@style/FullscreenTheme"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".Menu"
             android:label="@string/title_activity_menu"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
+            android:hardwareAccelerated="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Instruction"
+            android:label="@string/title_activity_instruction"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Preview"
+            android:label="@string/title_activity_preview"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Feedback"
+            android:label="@string/title_activity_feedback"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Customword"
+            android:label="@string/title_activity_customword"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
